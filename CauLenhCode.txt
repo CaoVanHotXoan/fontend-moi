@@ -1,0 +1,199 @@
+--LOGIN--
+- Hãy dùng thư viện tailwind, ngôn ngữ typescript , css , javascript code cho tôi 1 trang login
+-#Giao diện gồm:
+	+ background là hình xe ô tô có nền màu đen
+	+ ở giữa là 1 khung layout đăng nhập(#khung để bán trong suốt), để đăng nhập thì phải nhập email hoặc số điện thoại(#số điện thoại phải có ít nhất 10 chữ số), phải nhập mật khẩu(#Mật khẩu phải có ít nhất 6 chữ số) bên dưới là nút đăng nhập(#nút màu đen chữ màu trắng), nút đăng ký(#nếu chưa có tài khoản thì đăng ký,nút màu đen chữ màu trắng) và dòng chữ"Quên mật khẩu" bấm vào thì có thể đổi mật khẩu
+
+-#Chức năng gồm:
+	+ khi nhập đúng tài khoản và mật khẩu thì hiển thị thông báo đăng nhập thành công
+	+ khi bấm đăng ký thì có thể tạo tài khoản
+
+#Lưu ý:
+	+ có hiệu ứng hover màu đỏ
+	+ ghi chú từng đoạn code
+	+ tách code ra các file tsx , css , js 
+
+--TRANG CHỦ--
+- Hãy dùng thư viện tailwind, ngôn ngữ typescript , css , javascript code cho tôi 1 trang chủ
+-#Giao diện gồm:
+	+banner toàn màn hình(#bề ngang 100% bề dọc 80%)
+	+ bên trên là header trong header chứa thanh menu bên trái thanh menu là logo"TEAM BẤT ỔN"(#để logo nhỏ gọn) ở giữa là ô tìm kiếm sản phẩm(#bấm nút "TÌM KIẾM" để tìm sản phẩm) và có các icon khác như ô tô, xe máy, xe mô tô(#bên dưới các icon là tên) bên phải là icon giao diện cá nhân, dưới thanh menu là các mục như : "TRANG CHỦ" , "MUA BÁN" , "INFORMATION"(#trong information có mục nhỏ là "ABOUT US") , "LIÊN HỆ" 
+	+ ở giữa là phần nội dung(#chiếm 70% trang web) trong nội dung có bên trên là "TIN TỨC NỔI BẬT" bên dưới là "TIN BÁN XE"
+	+ cuối cùng là footer toàn bề ngang màn hình, trong footer chứa các thông tin như:(logo tên nhóm, chính sách công ty, thông tin liên hệ như:(Gmail ,số điện thoại)) toàn bộ thông tin sẽ là thông tin giả nhưng phải đầy đủ và hợp lý
+
+-#Chức năng gồm:
+	+ Banner có nút mũi tên trái phải ở 2 bên banner(#căn giữa 2 bên) để người dùng tự bấm chuyển hình ,nếu người dùng không bấm nút thì cứ cách 5s là tự động đổi ảnh(#lấy hình ảnh deal giảm giá và thông tin xe), hiệu ứng chuyển hình ảnh theo kiểu trượt tạo vòng lặp chạy liên tục
+	+ Thanh menu: các nhánh("ABOUT US") sẽ #ẩn bên trong các mục khi di chuyển chuột mới hiện, thanh tìm kiếm trạng thái bình thường sẽ ở dạng icon kính lúp(#kiểu tối giản chỉ có màu trắng) nhưng khi di chuyển chuột vào icon sẽ hiện ra dòng text để gõ chữ, icon giao diện cá #kiểu tối giản chỉ có màu trắng,có hiệu ứng khi di chuột tới từng mục chữ sẽ chuyển sang màu đỏ
+	+ thanh menu , các mục như: "TRANG CHỦ" , "MUA BÁN" , "INFORMATION" và footer sẽ để chung 1 file có tên "HeaderFooter.css" để dùng cho tất cả các trang khác
+	+ nội dung: cột "TIN TỨC NỔI BẬT" và "TIN BÁN XE" có nút mũi tên trái phải ở 2 bên để tìm tin làm hiệu ứng mờ hình ảnh từ hai bên cho tới giữa , ở giữa có tối đa 3 ảnh, hiệu ứng chuyển hình ảnh theo kiểu trượt (#trích dẫn hình ảnh và tiêu đề bấm vô thì có thể xem tin tức)
+#Lưu ý:
+	+ có hiệu ứng hover màu đỏ
+	+ ghi chú từng đoạn code
+	+ tách code ra các file tsx , css , ts 
+	+ liên kết các trang lại với nhau
+
+--THÔNG TIN CÁ NHÂN--
+- Hãy dùng thư viện tailwind, ngôn ngữ typescript , css , ts code cho tôi 1 trang thông tin cá nhân 
+-#Giao Diện gồm:
+	+ bên trái(#chiếm 30%) là các mục như thông tin tài khoản, thông báo, đổi mật khẩu bên phải(chiếm 70%) hiển thị các thông tin 
+	+ phần thông tin tài khoản bên trên hiển thị tên tài khoản và ảnh đại diện bên dưới hiển thị thông tin cá nhân như (Tên, email, số điện thoại, địa chỉ),nút cập nhật thông tin và đăng xuất
+	+ phần đổi mật khẩu có 3 ô text 1 ô để nhập mật khẩu , 1 ô để nhập mật khẩu mới, 1 ô để nhập xác nhận lại mật khẩu mới và 1 nút lưu
+
+-#Chức năng gồm:
+	+ click vò biểu tượng icon thông tin cá nhân ở góc thì sẽ dẫn ra trang thông tin cá nhân, khi chưa #đăng nhập click vào sẽ dẫn tới trang Login, khi đăng nhập thành công sẽ vào trang chủ
+	+ thông tin tài khoản, thông báo, đổi mật khẩu có thể click để chuyển giữa các mục
+	+ nút cập nhật thông tin khi bấm sẽ hiện ra bảng chứa các text như :(Tên, email, số điện thoại, địa chỉ, bên dưới sẽ có nút "LƯU" dể lưu thông tin) 
+	+ nút đăng xuất click vào sẽ đăng xuất tài khoản
+#Lưu ý:
+	+ có hiệu ứng hover màu đỏ
+	+ ghi chú từng đoạn code
+	+ tách code ra các file tsx , css , ts 
+	+ liên kết các trang lại với nhau
+	+ các file có chung đuôi thì gộp thành 1 file
+	+trang có màu chủ đạo là màu đen, chữ màu trắng và có hiệu ứng hover màu đỏ
+
+--TRANG MUA BÁN--
+- Hãy dùng thư viện tailwind, ngôn ngữ typescript , css , javascript code cho tôi 1 trang mua bán
+
+-#Giao Diện gồm:
+	+ bên trên và bên dưới là header và footer lấy từ file "HeaderFooter.css"
+	+ ở giữa bên phải(chiếm 25%) là bảng danh sách các xe bán chạy nhất của web(bảng có thể trượt lên xuống) ,ở giữa(chiếm 45%)là layout xe lấy trực tiếp từ "TIN BÁN XE" và tạo thêm 10 cái , bên trái(chiếm 30%) là bộ lọc #layout theo hàng doc có 4 nút("LOẠI XE","LOẠI NHIÊN LIỆU","HÃNG","GIÁ TIỀN"), nút "LOẠI XE" khi click vào bên trong sẽ hiện(#Ô tô, Xe máy,Xe moto ), nút "LOẠI NHIÊN LIỆU" khi click vào bên trong sẽ hiện(#Xăng, Dầu diesel, Điện, Hybrid), nút "HÃNG" khi click vào bên trong sẽ hiện(#Toyota, Honda,VinFast,Yamaha, Suzuki,Kawasaki,Tesla, Rivian), nút "GIÁ TIỀN" khi click vào bên trong sẽ hiện(#15 triệu – <30 triệu VNĐ,>30 triệu – <60 triệu VNĐ,>60 triệu – <180 triệu VNĐ, >180 triệu – <350 triệu VNĐ,>350 triệu – <500 triệu VNĐ,>500 triệu – <750 triệu VNĐ,>750 triệu – <950 triệu VNĐ, >950 triệu VNĐ)
+
+-#Chức Năng gồm:
+	+ các nút("LOẠI XE","HÃNG","GIÁ TIỀN") khi chưa click vào ở trạng thái mặc định sẽ thu gọn, khi click vào sẽ hiện ra danh sách bộ lọc và sẽ lọc theo thông tin của sản phẩm
+
+#Lưu ý:
+	+ có hiệu ứng hover màu đỏ
+	+ ghi chú từng đoạn code
+	+ tách code ra các file tsx , css , ts 
+	+ liên kết các trang lại với nhau
+	+ các file có chung đuôi thì gộp thành 1 file
+	+trang có màu chủ đạo là màu đen, chữ màu trắng và có hiệu ứng hover màu đỏ
+
+-#thêm mới đổi bảng top 10 xe bán chạy sang cùng hàng với bộ lọc(#để dưới bộ lọc)  mở rộng phẩn layout xe ra(chiếm 70%)
+-#thêm mới đổi layout xe sang dạng trượt giống danh sách top 10 xe bán chạy
+
+--Chi Tiết xe--
+- Hãy dùng thư viện tailwind, ngôn ngữ typescript , css , javascript code cho tôi 1 trang mua bán
+
+-#Giao Diện Gồm:
+	+bên trên và bên dưới là header và footer lấy từ file "HeaderFooter.css"
+	+ ở giữa là nội dung bên trên(# phía bên trái là hình ảnh xe(chiếm 60%) , bên phải là layout bảng dọc(chiếm 40%) gồm Tên xe, Giá tiền,Hãng xe, Dòng xe, Kiểu dáng ,Thông số kĩ thuật xe như(#Dung tích xi-lanh/Pin kWh,Công suất tối đa,Mô-men xoắn,Trọng lượng,Dung tích bình xăng/Pin,Hộp số, Hệ thống phanh, mức tiêu hao nhiên liệu),bên dưới sẽ có 2 nút là "Gọi cửa hàng","Nhắn cửa hàng" ), phần giữa của nội dung là mô tả, phần bên dưới của nội dung(#phía bên trái(chiếm 70%) là "TIN TỨC NỔI BẬT", "TIN BÁN XE" lấy từ trang chủ , phần bên phải(chiếm 30%) là top 10 xe bán chạy lấy từ trng mua bán)
+
+-#Chức Năng gồm:
+	+ trang này sẽ dùng để hiển thị chi tiết xe làm thành file chung để hiển thị chi tiết xe khi bấm vào layout xe ở (#tin bán xe,lay out xe ở trang mua bán, top 10 xe bán chạy)
+	
+#Lưu ý:
+	+ có hiệu ứng hover màu đỏ
+	+ ghi chú từng đoạn code
+	+ tách code ra các file tsx , css , ts 
+	+ liên kết các trang lại với nhau
+	+ các file có chung đuôi thì gộp thành 1 file
+	+trang có màu chủ đạo là màu đen, chữ màu trắng và có hiệu ứng hover màu đỏ
+
+-#thêm mới làm "TIN TỨC NỔI BẬT","TIN BÁN XE" thành dạng có thể trượt trái phải như ở trang chủ
+-#thêm mới thêm cho tôi chức năng hình ảnh có thể trượt 2 bên trái phải(#tối đa 10 ảnh) thiết kế nút trượt hiện đại
+-#thêm mới nút "Gọi cửa hàng"khi click vào sẽ hiện số điện thoại ngay tại nút đó click lần 2 sẽ gọi điện, nút"Nhắn cửa hàng" khi click sẽ dẫn ra QR code của zalo của cửa hàng để khách hàng quét
+
+--THANH TÌM KIẾM--
+- #Thêm cho tôi chức năng trên thanh menu thanh tìm kiếm khi nhập chữ sẽ đề xuất tên xe có chữ cái tương ứng kèm với tên xe của xe đó(hình ảnh xe bên phải,tên bên trái), khi bấm vào sẽ sang trang chi tiết xe
+
+--Trang Tin Tức--
+
+-Hãy dùng thư viện tailwind, ngôn ngữ typescript , css , javascript code cho tôi 1 trang tin tức
+-#Giao Diện Gồm:
+	+bên trên và bên dưới là header và footer lấy từ file "HeaderFooter.css"
+	ở giữa là nội dung, bên trên phần nội dung là menu phân loại tin tức có "Tin trong nước" , "Tin nước ngoài" , "Tin xe mới" , "Tin khuyến mại" mỗi loại tin cho tôi 20 tin , phần bên dưới(#phía bên trái là layout tin tức theo hàng dọc(chiếm 70%)có nút "Xem thêm" ở dưới đặt nút ở chính giữa, bên phải là layout top 10 xe bán chạy (chiếm 30%) dưới layout top 10 xe bán chạy làm cho tôi thêm 1 layout là video giống với khung layout top 10 xe bán chạy nhưng bên trong đổi thành video và có tiêu đề bên phải
+
+-#Chức năng gồm:
+	 nút "xem thêm khi bấm sẽ hiển thị thêm 3 bài báo còn mặc định khi chưa nhấn nút chỉ hiển thị 6 bài
+
+#Lưu ý:
++ có hiệu ứng hover màu đỏ
++ #ghi chú từng đoạn code
++ tách code ra các file tsx , css , ts
++ liên kết các trang lại với nhau
++ các file có chung đuôi thì gộp thành 1 file
++trang có màu chủ đạo là màu đen, chữ màu trắng và có hiệu ứng hover màu đỏ
+
+--Trang chi tiết tin tức--
+-Hãy dùng thư viện tailwind, ngôn ngữ typescript , css , javascript code cho tôi 1 trang tin tức
+-#Giao Diện Gồm:
+	+bên trên và bên dưới là header và footer lấy từ file "HeaderFooter.css"
+	+ ở giữa(#phía trên bên trái(chiếm 70%) hiển thị thông tin đầy đủ của bài báo cuối bài báo là nút "Trở về",bên phải(chiếm 30%)hiển thị layout"THÔNG TIN NỔI BẬT"(#layout theo hàng dọc có thể trượt lên xuống tối đa 10 tin) , phía dưới là "TIN BÁN XE" lấy từ trang chủ, dưới "TIN BÁN XE" là layout"CÓ THỂ BẠN SẼ QUAN TÂM"(#layout theo hàng dọc có 2 hàng mỗi hàng 3 bài báo theo hàng ngang))
+
+-#Chức Năng gồm:
+	+ khi click vào các bài báo sẽ hiện ra trang chi tiết tin tức chứa tin tức của bài báo đó
+	+nút "Trở về" click để trở về trang tin tức
+
+#Lưu ý:
++ có hiệu ứng hover màu đỏ
++ #ghi chú từng đoạn code
++ tách code ra các file tsx , css , ts
++ liên kết các trang lại với nhau
++ các file có chung đuôi thì gộp thành 1 file
++trang có màu chủ đạo là màu đen, chữ màu trắng và có hiệu ứng hover màu đỏ
+
+--Information_AboutUs--
+-Hãy dùng thư viện tailwind, ngôn ngữ typescript , css , ts code cho tôi 1 trang AboutUS 
+
+- #Giao diện gồm có:
+	+ bên trên và bên dưới là header và footer dùng chung lấy từ file HeaderFooter.css
+	+ ở giữa là nội dung (weight = 70%) có 2 layout bên ngoài trên cùng là hình ảnh, dưới là tên, bên trong là layout góc trên bên trái là hình ảnh kế bên là tên, bên dưới là mô tả nội dung công việc của thành viên đó 
+
+- #Chức năng gồm có:
+	+ khi bấm vào layout bên ngoài sẽ sổ ra layout bên trong, layout bên trong có mũi tên bên góc trái để thoát
+
+#Lưu ý:
++ có hiệu ứng hover màu đỏ
++ #ghi chú từng đoạn code
++ tách code ra các file tsx , css , ts
++ liên kết các trang lại với nhau
++ các file có chung đuôi thì gộp thành 1 file
++trang có màu chủ đạo là màu đen, chữ màu trắng và có hiệu ứng hover màu đỏ
+
+--Liên Hệ--
+-Hãy dùng thư viện tailwind, ngôn ngữ typescript , css , ts code cho tôi 1 trang Liên Hệ
+
+- #Giao diện gồm có:
+	+ bên trên và bên dưới là header và footer dùng chung
+	+ ở giữa là nội dung, bên trên là menu chuyển đổi giữa ứng tuyển và CSKH
+	+ #Ứng tuyển gồm: bên trái là tên, ngày tháng năm sinh(có icon lịch ben cạnh để chọn), địa chỉ email, vị trí(#là bảng danh sách bấm vào sẽ hiện ra nhân viên, quản lý), có ô để chọn file , có nút gửi, bên phải là bản đồ google map hiển thị nơi ứng tuyển
+	+ #CSKH gồm: tên,địa chỉ email, số điện thoại, nhập nội dung cần hỗ trợ,có nút gửi
+
+- #Chức năng gồm có:
+	+ menu có thể chuyển qua lại giữa ứng tuyển và cskh
+	+ nút gửi có thể gửi 
+
+#Lưu ý:
++ có hiệu ứng hover màu đỏ
++ #ghi chú từng đoạn code
++ tách code ra các file tsx , css , ts
++ liên kết các trang lại với nhau
++ các file có chung đuôi thì gộp thành 1 file
++trang có màu chủ đạo là màu đen, chữ màu trắng và có hiệu ứng hover màu đỏ
+
+
+-#Thêm mới đổi cho tôi icon của "ô tô","xe máy","mô tô" ở thanh menu sang kiểu icon mặt ngang của xe(#icon đơn giản, hiện đại)
+
+-#Thêm mới thêm cho tôi chức năng khi bấm vào icon "ô tô","xe máy","mô tô" sẽ dẫn tới trang mua bán và sẽ lọc lọi xe tương ứng với tên của icon đó
+#Lưu ý:
+	-#ghi chú từng đọn code
+
+--Reponsive--
+- hãy làm reponsive cho trang chủ, tin tức,liên hệ, information_abuotUs, chi tiết xe, login, mua bán xe,thong tin cá nhân
+
+-#dạng mobile(<= 440): menu dưới dạng hamberger nằm ở góc trên bên trái trong hamburger có(trang chủ, mua bán, tin tức, information, liện hệ) click chuột vào biều tượng hamberger để mở menu(#menu theo hàng dọc) và ẩn các icon như(# ô tô, xe máy, mô tô)
+
+-#dạng ipad(<=1024)
+
+-#lưu ý:
+	+#ghi chú từng đọn code
+
+
+-#thêm mới chỉnh cho tôi các khung layout ở trang @MuaBanXe.tsx thành bán trong suốt giống layout đăng ký đăng nhập của trang login
+
+
+
+
+
