@@ -1,0 +1,1 @@
+`authController.js` xử lý login/logout; `userController.js` đọc profile bằng query tham số; `procedureController.js` chứa whitelist và gọi các Stored Procedure trong `ThuTuc.sql` bằng `request.execute(procedureName)`.
