@@ -1,0 +1,428 @@
+/* Reset mặc định và thiết lập background chung */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Giao diện sáng theo phong cách showroom, chỉ thay đổi màu nền và màu chữ. */
+.login-container {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, .72), rgba(238, 242, 246, .62)),
+    url('/images/showroom-background.png') center / cover fixed;
+}
+
+.login-layout {
+  background: rgba(255, 255, 255, .78);
+  border-color: rgba(31, 41, 55, .14);
+  box-shadow: 0 30px 80px rgba(32, 42, 52, .24), inset 0 1px rgba(255, 255, 255, .8);
+}
+
+.form-side, .glass-panel { color: #1f2937; }
+.title {
+  background: linear-gradient(to right, #111827, #4b5563);
+  -webkit-text-fill-color: transparent;
+}
+.input-field {
+  background: rgba(255, 255, 255, .78);
+  border-color: rgba(31, 41, 55, .18);
+  color: #1f2937;
+}
+.input-field:focus { background: rgba(255, 255, 255, .95); }
+.input-field::placeholder { color: rgba(31, 41, 55, .5); }
+.input-icon { color: rgba(31, 41, 55, .55); }
+
+.login-container {
+  /* Nền showroom dùng chung cho các trang chính, giữ nguyên lớp tối để form dễ đọc. */
+  background: 
+    linear-gradient(135deg, rgba(255, 255, 255, .28) 0%, rgba(238, 242, 246, .2) 100%),
+    url('/images/showroom-background.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+.back-btn {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(15, 15, 20, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.back-icon {
+  font-size: 1.2rem;
+}
+
+/* Khung chung mô phỏng layout ảnh mẫu với hai cột cân đối. */
+.login-layout {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(420px, 1.15fr) minmax(360px, 0.85fr);
+  align-items: center;
+  width: min(1080px, calc(100vw - 4rem));
+  min-height: 560px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  background: rgba(8, 8, 10, 0.72);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.65), inset 0 1px rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Khu vực minh họa bên trái, chỉ trang trí và không can thiệp form. */
+.car-illustration {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 560px;
+  align-self: stretch;
+  justify-self: stretch;
+  margin: 0;
+  color: #fff;
+  animation: carEnter 0.9s ease-out both;
+}
+
+/* Ảnh phủ kín phần minh họa bên trái và giữ đúng tông đen của ảnh gốc. */
+.login-car-image {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* Che logo ở góc dưới bên phải bằng màu nền của ảnh. */
+.logo-cover {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 18%;
+  height: 20%;
+  background: #000;
+  pointer-events: none;
+}
+
+.car-caption {
+  display: none;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-align: center;
+}
+
+/* Cột phải giữ nguyên form và các trạng thái đăng nhập hiện có. */
+.form-side {
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@keyframes carEnter {
+  from {
+    opacity: 0;
+    transform: translateX(-35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Hiệu ứng hạt bụi bay (Micro-animation) */
+.login-container::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at center, transparent 0%, #000 100%);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+/* Khung layout đăng nhập (Glassmorphism cao cấp) */
+.glass-panel {
+  position: relative;
+  background: rgba(15, 15, 20, 0.5);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.75),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 420px;
+  padding: 3rem 2.5rem;
+  color: white;
+  animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  z-index: 1;
+  margin: 0 auto;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tiêu đề Form */
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(to right, #fff, #a0a0a0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Nhóm Input */
+.input-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+/* Ô nhập liệu hiện đại */
+.input-field {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 1rem 1rem 1rem 3rem; /* Để khoảng trống cho icon */
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #ef4444; /* Đỏ rực rỡ */
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.3);
+}
+
+.input-field::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* Icon bên trong input */
+.input-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.4);
+  transition: color 0.3s ease;
+  width: 20px;
+  height: 20px;
+}
+
+.input-field:focus + .input-icon,
+.input-field:not(:placeholder-shown) + .input-icon {
+  color: #ef4444;
+}
+
+/* Nút Submit cực chất */
+.action-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+  color: #ffffff;
+  padding: 1rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  margin-top: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.action-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  transition: all 0.5s ease;
+}
+
+.action-btn:hover {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  border-color: #ef4444;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(239, 68, 68, 0.4);
+}
+
+.action-btn:hover::before {
+  left: 100%;
+}
+
+.action-btn:active {
+  transform: translateY(1px);
+}
+
+/* Text thông báo lỗi / thành công */
+.error-text {
+  color: #ef4444;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.success-message {
+  background: rgba(34, 197, 94, 0.15);
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  color: #4ade80;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 500;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Liên kết điều hướng (Quên mk / Đăng ký) */
+.forgot-password-link {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.forgot-password-link:hover {
+  color: #ef4444;
+  transform: scale(1.05);
+}
+
+.switch-mode-text {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.switch-mode-btn {
+  color: #fff;
+  font-weight: 600;
+  margin-left: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding: 0;
+}
+
+.switch-mode-btn:hover {
+  color: #ef4444;
+  text-decoration: underline;
+}
+
+/* Thu gọn layout trên màn hình nhỏ để giữ nguyên trải nghiệm nhập liệu. */
+@media (max-width: 900px) {
+  .login-container {
+    padding: 2rem 1rem;
+  }
+
+  .login-layout {
+    grid-template-columns: 1fr;
+    width: min(520px, calc(100vw - 2rem));
+    min-height: auto;
+  }
+
+  .car-illustration {
+    width: min(90%, 460px);
+    height: auto;
+    min-height: 0;
+    align-self: auto;
+    justify-self: center;
+    padding: 2rem 1rem 0;
+  }
+
+  .login-car-image {
+    position: relative;
+    inset: auto;
+    min-height: 0;
+    height: auto;
+  }
+
+  .form-side {
+    border-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-panel {
+    max-width: 420px;
+  }
+}
+
+/* Tablet: thu hẹp hai cột nhưng vẫn giữ bố cục xe và form song song. */
+@media (max-width: 1024px) and (min-width: 901px) {
+  .login-layout { width: calc(100vw - 3rem); grid-template-columns: minmax(360px, 1.05fr) minmax(330px, .95fr); }
+  .glass-panel { padding: 2.25rem 1.75rem; }
+}
+
+/* Mobile nhỏ: đảm bảo khung đăng nhập vừa màn hình và input không bị tràn. */
+@media (max-width: 440px) {
+  .login-container { padding: 1rem .5rem; }
+  .login-layout { width: 100%; border-radius: 16px; }
+  .car-illustration { width: 100%; padding: 1rem .5rem 0; }
+  .glass-panel { padding: 2rem 1rem; }
+  .title { font-size: 1.55rem; margin-bottom: 1.35rem; }
+  .input-field { padding: .85rem .8rem .85rem 1rem; font-size: .9rem; }
+  .action-btn { padding: .85rem; font-size: .9rem; }
+}

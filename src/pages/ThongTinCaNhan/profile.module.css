@@ -1,0 +1,135 @@
+.page {
+  position: relative;
+  min-height: 100vh;
+  background: #080808;
+  color: #fff;
+  padding: 40px 24px;
+}
+
+.shell { max-width: 1180px; margin: 0 auto; }
+.header { position: relative; display: flex; align-items: center; gap: 18px; margin-bottom: 36px; padding-left: 52px; }
+.header h1 { font-size: clamp(1.7rem, 3vw, 2.5rem); letter-spacing: -0.04em; }
+.eyebrow { color: #ef4444; font-size: .7rem; font-weight: 800; letter-spacing: .18em; margin-bottom: 7px; }
+.backButton, .closeButton { border: 0; background: transparent; color: #aaa; cursor: pointer; font-size: 1.8rem; transition: color .2s; }
+.backButton {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: 50%;
+  background: rgba(28, 28, 28, .76);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, .35);
+  color: #f5f5f5;
+  font-size: 1.65rem;
+  line-height: 1;
+  backdrop-filter: blur(10px);
+  transition: color .25s, background-color .25s, border-color .25s, box-shadow .25s, transform .25s;
+}
+.backButton:hover, .backButton:focus-visible {
+  border-color: #ef4444;
+  background: #ef4444;
+  box-shadow: 0 10px 28px rgba(239, 68, 68, .35);
+  color: #fff;
+  transform: translateX(-3px);
+  outline: none;
+}
+.closeButton:hover { color: #ef4444; }
+.logoutTop { margin-left: auto; background: transparent; border: 1px solid #333; color: #ddd; border-radius: 5px; padding: 10px 18px; cursor: pointer; transition: all .2s; }
+.logoutTop:hover, .secondaryButton:hover { border-color: #ef4444; color: #ef4444; }
+.layout { display: grid; grid-template-columns: 30% 1fr; gap: 24px; }
+.sidebar, .panel { background: #111; border: 1px solid #242424; border-radius: 12px; }
+.sidebar { padding: 24px; display: flex; flex-direction: column; min-height: 570px; }
+.userCard { display: flex; align-items: center; gap: 13px; padding-bottom: 25px; border-bottom: 1px solid #292929; }
+.avatar, .largeAvatar { display: grid; place-items: center; border-radius: 50%; background: #e21b23; color: #fff; font-weight: 900; }
+.avatar { width: 48px; height: 48px; font-size: 1rem; }
+.avatarImage, .largeAvatarImage { display: block; border-radius: 50%; object-fit: cover; }
+.avatarImage { width: 48px; height: 48px; }
+.userName { font-weight: 700; }
+.userEmail, .sidebarNote, .profileHero p, .description, .emptyState p { color: #898989; font-size: .85rem; }
+.menu { display: grid; gap: 7px; margin-top: 25px; }
+.menuItem { display: flex; align-items: center; gap: 12px; width: 100%; padding: 14px; border: 0; border-radius: 6px; background: transparent; color: #aaa; text-align: left; cursor: pointer; transition: all .2s; }
+.menuItem:hover, .menuItemActive { background: #221014; color: #fff; }
+.menuItem:hover .menuIcon, .menuItemActive .menuIcon, .menuItem:hover .menuArrow, .menuItemActive .menuArrow { color: #ef4444; }
+.menuIcon { color: #777; font-size: 1.1rem; }
+.menuArrow { margin-left: auto; color: #555; }
+.sidebarNote { margin-top: auto; line-height: 1.6; }
+.content { min-width: 0; position: relative; }
+.panel { padding: clamp(24px, 4vw, 42px); min-height: 570px; }
+.panelHeading, .modalHeading { display: flex; align-items: flex-start; justify-content: space-between; gap: 15px; }
+.panel h2, .modal h2 { font-size: 1.7rem; letter-spacing: -.04em; }
+.status, .badge { color: #63d391; font-size: .75rem; background: #102318; padding: 7px 10px; border-radius: 30px; }
+.badge { color: #ef4444; background: #281012; }
+.profileHero { display: flex; align-items: center; gap: 18px; padding: 30px 0; border-bottom: 1px solid #292929; }
+.largeAvatar { width: 78px; height: 78px; font-size: 1.5rem; }
+.largeAvatarImage { width: 78px; height: 78px; }
+.profileHero h3 { font-size: 1.25rem; }
+.infoGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 30px; padding: 30px 0; }
+.infoItem { display: grid; gap: 7px; }
+.infoItem span { color: #777; font-size: .76rem; text-transform: uppercase; letter-spacing: .08em; }
+.infoItem strong { color: #eee; font-size: .95rem; overflow-wrap: anywhere; }
+.actions { display: flex; gap: 12px; }
+.primaryButton, .secondaryButton { border-radius: 5px; padding: 12px 18px; cursor: pointer; font-weight: 700; transition: all .2s; }
+.logoutModalActions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 8px; }
+.primaryButton { border: 1px solid #ef4444; background: #ef4444; color: #fff; }
+.primaryButton:hover { background: #b91c1c; border-color: #b91c1c; }
+.secondaryButton { border: 1px solid #444; background: transparent; color: #ddd; }
+.emptyState { display: grid; place-items: center; text-align: center; padding: 110px 20px; }
+.emptyIcon { color: #ef4444; font-size: 3rem; margin-bottom: 15px; }
+.emptyState h3 { margin-bottom: 8px; }
+.description { margin: 15px 0 30px; }
+.form { display: grid; gap: 18px; max-width: 560px; }
+.field { display: grid; gap: 8px; color: #bbb; font-size: .85rem; }
+.field input { width: 100%; border: 1px solid #343434; border-radius: 5px; background: #0b0b0b; color: #fff; padding: 13px 14px; outline: 0; transition: border-color .2s, box-shadow .2s; }
+.field input:focus { border-color: #ef4444; box-shadow: 0 0 0 3px #ef444422; }
+.toast { position: absolute; right: 20px; top: 20px; z-index: 2; background: #1b1b1b; border-left: 3px solid #ef4444; color: #eee; padding: 13px 16px; box-shadow: 0 8px 28px #0008; }
+.modalBackdrop { position: fixed; inset: 0; display: grid; place-items: center; padding: 20px; background: rgba(3, 5, 8, .78); backdrop-filter: blur(8px); z-index: 10; animation: modalBackdropIn .2s ease-out both; }
+.modal { width: min(100%, 420px); max-height: calc(100vh - 40px); overflow-y: auto; display: grid; gap: 14px; background: linear-gradient(145deg, #1b1d22, #101114); border: 1px solid rgba(255, 255, 255, .14); border-radius: 16px; padding: 26px; box-shadow: 0 24px 80px rgba(0, 0, 0, .65), 0 0 0 1px rgba(239, 68, 68, .08); animation: modalIn .24s cubic-bezier(.2, .8, .2, 1) both; }
+.modal h2 { font-size: 1.4rem; letter-spacing: -.025em; }
+.logoutModalIcon { display: grid; place-items: center; width: 42px; height: 42px; margin-bottom: 12px; border: 1px solid rgba(239, 68, 68, .3); border-radius: 12px; background: rgba(239, 68, 68, .12); color: #f87171; font-size: 1.35rem; font-weight: 800; }
+.modal .field { gap: 5px; font-size: .78rem; }
+.modal .field input { padding: 10px 11px; }
+.modal .primaryButton { width: 100%; padding: 10px 14px; font-size: .82rem; }
+.closeButton { display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid rgba(255, 255, 255, .12); border-radius: 50%; background: rgba(255, 255, 255, .04); font-size: 1.35rem; line-height: 1; }
+.logoutModalActions { padding-top: 6px; border-top: 1px solid rgba(255, 255, 255, .1); }
+.logoutModalActions .secondaryButton, .logoutModalActions .primaryButton { min-width: 112px; }
+.logoutModalActions .primaryButton { background: linear-gradient(135deg, #ef4444, #b91c1c); box-shadow: 0 8px 20px rgba(239, 68, 68, .2); }
+.logoutModalActions .primaryButton:hover { transform: translateY(-1px); box-shadow: 0 11px 24px rgba(239, 68, 68, .3); }
+@keyframes modalBackdropIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes modalIn { from { opacity: 0; transform: translateY(12px) scale(.97); } to { opacity: 1; transform: translateY(0) scale(1); } }
+.profileImagePreview { width: 82px; height: 82px; border-radius: 50%; object-fit: cover; border: 2px solid #ef4444; }
+
+@media (max-width: 760px) {
+  .page { padding: 24px 14px; }
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { min-height: auto; }
+  .sidebarNote { margin-top: 24px; }
+  .infoGrid { grid-template-columns: 1fr; }
+  .header { align-items: flex-start; }
+  .logoutTop { padding: 8px 10px; font-size: .75rem; }
+}
+
+/* Tablet: giảm padding và tỷ lệ sidebar để nội dung hồ sơ vẫn thoáng. */
+@media (max-width: 1024px) and (min-width: 761px) {
+  .page { padding: 32px 18px; }
+  .layout { grid-template-columns: 260px 1fr; gap: 16px; }
+  .sidebar { padding: 18px; }
+  .panel { padding: 24px; }
+}
+
+/* Mobile nhỏ: xếp sidebar lên trên và chuyển các nút hành động thành cột. */
+@media (max-width: 440px) {
+  .page { padding: 20px 10px; }
+  .header { gap: 10px; margin-bottom: 24px; padding-left: 42px; }
+  .header h1 { font-size: 1.45rem; }
+  .layout { grid-template-columns: 1fr; gap: 14px; }
+  .sidebar { min-height: auto; padding: 16px; }
+  .panel { min-height: 0; padding: 20px 16px; }
+  .panelHeading { flex-direction: column; }
+  .profileHero { align-items: flex-start; flex-direction: column; padding: 22px 0; }
+  .actions { flex-direction: column; }
+  .toast { right: 10px; left: 10px; top: 10px; }
+}
